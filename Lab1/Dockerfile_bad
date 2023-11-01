@@ -1,0 +1,14 @@
+# syntax=docker/dockerfile:1.4
+
+FROM python:latest AS ugabuga
+EXPOSE 8000
+WORKDIR /first_django
+RUN pip3 install asgiref==3.6.0
+RUN pip3 install Django==4.1.7
+RUN pip3 install environs==7.3.1
+RUN pip3 install sqlparse==0.4.3
+RUN pip3 install tzdata==2022.7
+COPY . /first_django
+ENTRYPOINT ["python3"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
+

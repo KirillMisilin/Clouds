@@ -1,0 +1,7 @@
+services:
+  web: 
+    build:
+      context: first_django
+      target: ugabuga
+    ports: 
+      - '8000:8000'
